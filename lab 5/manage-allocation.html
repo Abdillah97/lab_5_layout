@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>allocations</title>
+        <title> Manage allocations</title>
         <link rel="stylesheet" href="include/bootstrap-5.3.5-dist/css/bootstrap.min.css">
         <style>
             .sidebar {
@@ -91,15 +91,43 @@
                     </div>
                     <hr style="background-color: orange;border: none; height: 5px;">
     
-    <div class="p-4 w-100">
-        <h3>Manage Course Allocation</h3>
-        <button class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#modal"> + Allocate New Course</button>
+    <div class="row">
+        <h4>Manage Course Allocation</h4>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="phone" class="form-label">Select Year</label>
+                <select class="form-select" id="Year" name="Year">
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="phone" class="form-label">Select Semister</label>
+                <select class="form-select" id="Semister" name="Semister">
+                    <option value="Semister 1">Semister 1</option>
+                    <option value="Semister 2">Semister 2</option>
+                </select>
+            </div>
+
+            <div class="col">
+                <label for="button" class="form-label" style="color: white;">view</label><br>
+                <input type="button" class="btn btn-primary" value="view Allocation">
+            </div>
+        </div>
+        <button class="btn btn-success col-md-3" data-bs-toggle="modal" data-bs-target="#modal"> + Allocate New Allocation</button>
+        <p></p>
         <table class="table table-bordered table-striped">
             <thead>
-                <tr><th>Instructor</th><th>Course</th></tr>
+                <tr><th>Instructor</th><th>Course</th><th>Year</th><th>Semister</th>
+                    <th>Edit</th><th>Drop</th><th>Enrolle Students</th></tr>
             </thead>
             <tbody>
-                <tr><td>Mr. Ali</td><td>CS101</td></tr>
+                <tr><td>Dr Smith</td><td>CSC101-Intro to programming</td><td>2025</td><td>1</td>
+                    <td><button class="btn btn-sm btn-warning">Edit</button></td>
+                    <td><button class="btn btn-sm btn-danger">Drop</button></td>
+                    <td><button class="btn btn-sm btn-primary">View</button></td>
+                </tr>
             </tbody>
         </table>
 
@@ -108,21 +136,39 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Allocate Course</h5>
+                <h5 class="modal-title" id="modalLabel">Add New Allocation</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <input class="form-control mb-2" placeholder="Instructor"><input class="form-control mb-2" placeholder="Course">
+                <label for="" class="form-label">Instructor</label>
+                <select class="form-select" id="Instructor" name="Instructor">
+                    <option value="Dr Smith">Dr Smith</option>
+                    <option value="Dr Rams">Dr Rams</option>
+                </select>
+                
+                <label for="" class="form-label">Course</label>
+                <select class="form-select" id="Course" name="Course">
+                    <option value="CSC101-Intro to programming">CSC101-Intro to programming</option>
+                    <option value="">..</option>
+                    <option value="">..</option>
+                </select>
+                
+                <label for="" class="form-label">Year</label>
+                <input type="text" class="form-control" id="Year" name="Year">
+                <label for="" class="form-label">Semister</label>
+                <input type="text" class="form-control" id="Semister" name="Semister">
+
+
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary">Close</button>
+                <button type="button" class="btn btn-primary">Save Allocation</button>
               </div>
             </div>
           </div>
         </div>
-        <footer class="mt-4 text-center border-top" style="padding: 10px 0;position:fixed;bottom: 0;">
-            <p style="text-align: center;padding-left: 300px;">© 2025 The State University of Zanzibar | Version 1.0.2</p>
+        <footer class="mt-4 text-center border-top" style="padding: 10px 0;bottom: 0;">
+            <p>© 2025 The State University of Zanzibar | Version 1.0.2</p>
         </footer>
     </div>
 </div>
