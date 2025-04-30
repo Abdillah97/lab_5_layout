@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>manage students</title>
+        <link rel="stylesheet" href="include/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+        <style>
+            .sidebar {
+                height: 100vh;
+                background-color: #343a40;
+                color: white;
+            }
+    
+            .nav-link {
+                color: white;
+            }
+    
+            .nav-link.active {
+                background-color: #0d6efd;
+            }
+    
+            .dropdown-menu {
+                left: -100px !important;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar" style="background-color: rgb(13, 2, 61);">
+                    <div class="position-sticky">
+                        <div class="text-left py-4;" style="background-color: rgb(37, 90, 151); height: 90px; width: 100%;">
+                            <img src="include/suz.png" class="img-fluid mb-3" style="height: 70px;width: 60px;padding-top: 20px;">
+                        </div>
+                        <ul class="nav flex-column" style="background-color: rgb(13, 2, 61);padding: 10px; width: 100%; height: auto;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboard.html">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="manage-user.html">
+                                    Manage Users
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="manage-instructors.html">
+                                    Manage Instructors
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="manage-students.html">
+                                    Manage Students
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="manage-courses.html">
+                                    Manage Courses
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="manage-results.html">
+                                    Manage Results
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="manage-allocation.html">
+                                    Manage Allocations
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+    
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                        <img src="include/bar.png" style="height: 25px; width: 25px; border-radius: 5px;">
+                        
+                        <div class="dropdown ms-auto">
+                            <button class="btn btn-light dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Admin Name <i class="fas fa-user"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                <li><a class="dropdown-item" href="#">Change Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr style="background-color: orange;border: none; height: 5px;">
+    
+    <div class="p-4 w-100">
+        <h3>Manage Students</h3>
+        <button class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#modal"> + Add New Student</button>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr><th>Reg.Number</th><th>First Name</th><th>Last Name</th><th>Sex</th>
+                    <th>Date of Birth</th><th>Program</th><th>Year</th><th>Edit</th>
+                    <th>Delete</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+            <tr><td>STU001</td><td>Alice</td><td>Johnson</td><td>Female</td><td>2000-05-15</td>
+                <td>CS</td><td>3</td>
+
+                <td><button class="btn btn-sm btn-warning">Edit</button></td>
+                <td><button class="btn btn-sm btn-danger">Delete</button></td>
+                <td><button class="btn btn-sm btn-secondary">Deactivate</button></td>
+            </tr>
+            <tr><td>STU002</td><td>Michael</td><td>Smith</td><td>Male</td><td>1999-08-22</td>
+                <td>IT</td><td>2</td>
+
+                <td><button class="btn btn-sm btn-warning">Edit</button></td>
+                <td><button class="btn btn-sm btn-danger">Delete</button></td>
+                <td><button class="btn btn-sm btn-secondary">Deactivate</button></td>
+            </tr>
+            <tr><td>STU003</td><td>Sarah</td><td>Williams</td><td>Female</td><td>2001-03-10</td>
+                <td>SE</td><td>1</td>
+
+                <td><button class="btn btn-sm btn-warning">Edit</button></td>
+                <td><button class="btn btn-sm btn-danger">Delete</button></td>
+                <td><button class="btn btn-sm btn-success">Activate</button></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog" style="width: 500px;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Add New Student</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="username" class="form-label">Registration Number</label>
+                            <input type="text" class="form-control" id="Registration" name="Registration" required>
+                        </div>
+                        <div class="col">
+                            <label for="lastName" class="form-label">Date of Birth</label>
+                            <input type="text" class="form-control" id="DOB" name="DOB">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="email" class="form-label">First Name</label>
+                            <input type="email" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="col">
+                            <label for="phone" class="form-label">Program</label>
+                            <select class="form-select" id="Program" name="Program">
+                                <option value="CS">CS</option>
+                                <option value="IT">IT</option>
+                                <option value="SE">SE</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="firstName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName">
+                        </div>
+                        <div class="col">
+                            <label for="userRole" class="form-label">Year of Study</label>
+                            <input type="text" class="form-control" id="yos" name="yos">
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        
+                        <div class="col">
+                            <label for="userStatus" class="form-label">User Status</label>
+                            <select class="form-select" id="userStatus" name="userStatus">
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="blocked">Blocked</option>
+                            </select>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="userStatus" class="form-label">Sex</label>
+                            <select class="form-select" id="sex" name="sex">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary"align="left">Save Student</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <footer class="mt-4 text-center border-top" style="padding: 10px 0;position:fixed;bottom: 0;">
+            <p style="text-align: center;padding-left: 300px;">© 2025 The State University of Zanzibar | Version 1.0.2</p>
+        </footer>
+    </div>
+</div>
+
+<script src="include/js/jquery.min.js"></script>
+<script src="include/js/bootstrap-select.min.js"></script>
+<script src="include/js/bootstrap.min.js"></script>
+<script src="include/js/jquery.dataTables.min.js"></script>
+<script src="include/js/dataTables.bootstrap.min.js"></script>
+<script src="include/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+<script src="include/bootstrap-5.3.5-dist/js/jquery.dataTables.min"></script>
+
+</body>
+</html>
