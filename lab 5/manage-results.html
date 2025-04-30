@@ -90,15 +90,45 @@
                         </div>
                     </div>
                     <hr style="background-color: orange;border: none; height: 5px;">
-    <div class="p-4 w-100">
-        <h3>Manage Results</h3>
-        <button class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#modal"> + Upload New Result</button>
+    <div class="row">
+        <h4>Manage Results</h4>
+        <div class="row mb-3">
+            <div class="col col-md-2">
+                <select class="form-select" id="Year" name="Year">
+                    <option value="2025">2024</option>
+                    <option value="2024">2025</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+            <div class="col col-md-2">
+                <select class="form-select" id="Semister" name="Semister">
+                    <option value="Semister 1">Semister 1</option>
+                    <option value="Semister 2">Semister 2</option>
+                </select>
+            </div>
+
+            <div class="col">
+                <input type="button" class="btn btn-primary" value="Filter">
+            </div>
+        </div>
+        <p><button type="button" class="btn btn-sm btn-outline-secondary ms-2" style="background-color: rgba(165, 189, 189, 0.877);">
+            Export to Excel
+        </button></p>
+        
         <table class="table table-bordered table-striped">
             <thead>
-                <tr><th>Student</th><th>Course</th><th>Grade</th></tr>
+                <tr><th>Instructor</th><th>Course</th><th>Year</th><th>Semister</th>
+                    <th>View Results</th><th>Upload Results</th></tr>
             </thead>
             <tbody>
-                <tr><td>Jane Smith</td><td>CS101</td><td>A</td></tr>
+                <tr>
+                    <td>Dr John Doe</td><td>CS101-Introduction to Computer Science</td><td>2024</td><td>1</td>
+                    <td><input type="submit" style="background-color: #0d6efd;" value="View Results" class="form-control"></td>
+                    <td><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal"> 
+                        Upload Results
+                    </button>
+                    </td>
+                </tr>
             </tbody>
         </table>
 
@@ -107,21 +137,44 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Upload Result</h5>
+                <h5 class="modal-title" id="modalLabel">Upload Results for Course: </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <input class="form-control mb-2" placeholder="Student"><input class="form-control mb-2" placeholder="Grade">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Registration No</th>
+                            <th>Coursework Score</th>
+                            <th>exam score</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12345</td>
+                            <td><input type="text" placeholder="Enter Coursework Score" class="form-control mb-2"></td>
+                            <td><input type="text" placeholder="Enter exam Score" class="form-control mb-2"></td>
+                            <td><button class="btn btn-primary">save</button></td> 
+                        </tr>
+
+                        <tr>
+                            <td>12346</td>
+                            <td><input type="text" placeholder="Enter Coursework Score" class="form-control mb-3"></td>
+                            <td><input type="text" placeholder="Enter exam Score" class="form-control mb-3"></td>
+                            <td><button class="btn btn-primary">save</button></td> 
+                        </tr>
+                    </tbody>
+                </table>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
               </div>
             </div>
           </div>
         </div>
-        <footer class="mt-4 text-center border-top" style="padding: 10px 0;position:fixed;bottom: 0;">
-            <p style="text-align: center;padding-left: 300px;">© 2025 The State University of Zanzibar | Version 1.0.2</p>
+        <footer class="mt-4 text-center border-top" style="padding: 10px 0;bottom: 0;">
+            <p style="text-align: center;">© 2025 The State University of Zanzibar | Version 1.0.2</p>
         </footer>
     </div>
 </div>
